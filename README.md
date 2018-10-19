@@ -1,6 +1,6 @@
 # laravel-notes
 
-A collaborative note app built with Laravel, Vue.js and Pusher. Follow the tutorial [https://pusher.com/tutorials/collaborative-note-app-laravel/](https://pusher.com/tutorials/collaborative-note-app-laravel/)
+A collaborative note app built with Laravel, Vue.js and Pusher. 
 
 ## Getting Started
 
