@@ -23,4 +23,14 @@ class Note extends Model
     {
         return 'slug';
     }
+
+     public static function returnallnotes()
+    {
+            $notes = Note::where('user_id', auth()->user()->id)
+                        ->orderBy('updated_at', 'DESC')
+                        ->get();
+
+
+        return $notes;
+    }
 }

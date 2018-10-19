@@ -79,6 +79,32 @@
             </div>
         </nav>
 
+         <div class="col-md-4 col-md-offset-2">
+
+                {{$notes = App\Note::returnallnotes()}}
+         
+                    @if($notes->isEmpty())
+                    <p>
+                        You have not created any notes! <a href="{{ url('create') }}">Create one</a> now.
+                    </p>
+                    @else
+                    <ul class="list-group">
+                        @foreach($notes as $note)
+                        <li class="list-group-item">
+                            <a href="{{ url('edit', [$note->slug]) }}">
+                                {{ $note->title }}
+                            </a>
+                            <span class="pull-right">{{ $note->updated_at->diffForHumans() }}</span>
+                        </li>
+                        @endforeach
+                    </ul>
+                    @endif
+                </div>
+                
+                <div class="col-md-4">
+                   
+                </div>
+
         @yield('content')
     </div>
 
