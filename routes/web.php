@@ -13,7 +13,13 @@
 
 Auth::routes();
 
-Route::get('/', 'NotesController@index');
+Route::get('/', function () {
+
+    return view('notes.index1');
+});
+
+
+Route::get('/home', 'NotesController@index');
 Route::get('create', 'NotesController@create');
 Route::post('create', 'NotesController@store');
 Route::get('edit/{note}', 'NotesController@edit');
