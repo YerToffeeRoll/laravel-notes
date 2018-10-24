@@ -14,7 +14,7 @@
                     @else
                     <ul class="list-group">
                         @foreach($notes as $note)
-                        <li class="list-group-item">
+                        <li id="{{$note->id}}" class="list-group-item" onclick="myFunction(this)">
                             <a href="{{ url('edit', [$note->slug]) }}">
                                 {{ $note->title }}
                             </a>
@@ -26,22 +26,46 @@
                 </div>
                 
                 <div class=" col-nine card">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                    </div>
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-                    </div>
+                  <div id="note-card">
+                      <div id="note-heading"><h3>Note</h3></div>
+                       <div id="note-info">
+                        <p>Click the note at the side to view.</p>
+                       </div>
+                  </div>
                 </div>
             </div>
         </div>
 
 </div>
 </section>
+
+
+
+<script>
+function myFunction(elmt) {
+
+  var id = elmt.id; // A random variable for this example
+
+$.ajax({
+
+    method: 'GET', // Type of response and matches what we said in the route
+    url: '/note/ajaxget', // This is the url we gave in the route
+    data: {'id' : id,
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}, // a JSON object to send back
+    success: function(response){ // What to do if we succeed
+        console.log(response[0]);
+
+        var div = document.getElementById('note-info');
+
+        $("#note-card #note-heading").html("<h3 style='color:black;'>"+response[0]['title']+"</h3>");
+        $("#note-card #note-info").html("<p>"+response[0]['body']+"</p>");
+    
+    },
+    error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+        console.log(JSON.stringify(jqXHR));
+        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+    }
+});
+}
+</script>
 @endsection

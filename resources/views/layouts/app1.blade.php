@@ -21,6 +21,16 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_ID')}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-99729900-5');
+</script>
+
      <!-- CSS
     ================================================== -->
     <link rel="stylesheet" href="css/base.css">

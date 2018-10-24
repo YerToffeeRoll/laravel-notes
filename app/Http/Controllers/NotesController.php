@@ -86,4 +86,13 @@ class NotesController extends Controller
 
         return 'Saved!';
     }
+
+
+     public function getNoteInfo(Request $request)
+    {
+
+        $note = Note::where('id', $request->id)->get();
+
+        return $note;
+    }
 }

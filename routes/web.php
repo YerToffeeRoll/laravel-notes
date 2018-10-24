@@ -23,4 +23,5 @@ Route::get('/home', 'NotesController@index');
 Route::get('create', 'NotesController@create');
 Route::post('create', 'NotesController@store');
 Route::get('edit/{note}', 'NotesController@edit');
+Route::get('/note/ajaxget', 'NotesController@getNoteInfo');
 Route::patch('edit/{note}', 'NotesController@update');
