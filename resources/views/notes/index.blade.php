@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">My notes</div>
-            <div class="panel-body">
-                <div class="col-md-4 col-md-offset-2">
+<section id="home" class="s-home target-section">
+    <div class="home-content">
+        <div class="row home-content__main wide">
+            <div class="container">
+                <div class="row">
+                    <div class="col-three tab-full card">
                     
                     @if($notes->isEmpty())
                     <p>
@@ -25,7 +25,7 @@
                     @endif
                 </div>
                 
-                <div class="col-md-4">
+                <div class=" col-nine card">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
                         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
@@ -41,6 +41,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </div>
+</section>
 @endsection

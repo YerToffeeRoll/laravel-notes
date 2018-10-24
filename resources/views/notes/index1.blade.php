@@ -2,40 +2,6 @@
 @section('content')
 
 
-<div id="preloader">
-        <div id="loader"></div>
-    </div>
-
-  <!-- header 
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="header-logo">
-            <a class="site-logo" href="index.html">
-                  <H1 class="display-2" style="color: white !important;">NOTES</H1>
-            </a>
-        </div>
-
-        <nav class="row header-nav-wrap wide">
-            <ul class="header-main-nav">
-                <li class="current"><a class="smoothscroll" href="#home" title="intro">Login</a></li>
-                <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-        
-                <li><a href="https://www.regalmajestic.co.uk" title="blog">Blog</a></li>  
-            </ul>
-
-            <ul class="header-social">
-                <li><a href="#0"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                <li><a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#0"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-            </ul>
-        </nav>
-
-        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
-    
-    </header> <!-- end header -->
-
-
  <!-- home
     ================================================== -->
     <section id="home" class="s-home target-section">

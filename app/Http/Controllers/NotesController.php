@@ -23,7 +23,7 @@ class NotesController extends Controller
                         ->orderBy('updated_at', 'DESC')
                         ->get();
 
-        return view('notes.index1', compact('notes'));
+        return view('notes.index', compact('notes'));
     }
 
     /**
@@ -56,7 +56,7 @@ class NotesController extends Controller
             'body'    => $request->body
         ]);
 
-        return redirect('/');
+        return redirect('/home');
     }
 
     /**

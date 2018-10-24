@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+         <nav class="row header-nav-wrap wide">
             <div class="container">
                 <div class="navbar-header">
 
